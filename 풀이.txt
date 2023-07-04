@@ -1,0 +1,5 @@
+select M.*, G.* from member M inner join goods G ON M.m_id = G.g_id;
+
+select M.m_id,M.m_name,G.g_name,G.g_price_sum from member M inner join goods G ON M.m_id = G.g_id;
+
+select M.m_id,M.m_name,M.m_addr, sum(G.g_price_sum) from member M inner join goods G ON M.m_id = G.g_id GROUP BY M.m_id, M.m_name, M.m_addr;
